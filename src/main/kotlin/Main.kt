@@ -36,3 +36,6 @@ fun main() {
     }
 }
 
+// mover a peça
+// verificar colisoes
+// verificar status bar
