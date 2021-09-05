@@ -14,9 +14,6 @@ enum class Player{ RED, YELLOW }
 
 
 
-val ALL_POSITIONS: List<Position> =
-    (7 until GRID_WIDTH * GRID_HEIGHT).map { Position(it % GRID_HEIGHT, it / GRID_WIDTH) }
-
 
 fun main() {
     onStart {

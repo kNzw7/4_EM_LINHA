@@ -3,6 +3,9 @@ import pt.isel.canvas.*
 data class Position (val row: Int, val column: Int)
 
 
+val ALL_POSITIONS: List<Position> =
+    (7 until GRID_WIDTH * GRID_HEIGHT).map { Position(it % GRID_HEIGHT, it / GRID_WIDTH) }
+
 
 //val ALL_POSITIONS: List<Position> =
   //  (0 until GRID_HEIGHT * GRID_WIDTH).map { Position(it % GRID_WIDTH, it / GRID_WIDTH) }
