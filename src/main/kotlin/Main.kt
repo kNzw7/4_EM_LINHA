@@ -28,7 +28,7 @@ fun main() {
         drawGrid(cv)
         drawSpaces(cv)
         cv.drawDisc(connect4.falling)
-        drawStatus(cv)
+        connect4.drawStatus(cv)
         println(ALL_POSITIONS.size)
     }
     onFinish {
@@ -38,4 +38,3 @@ fun main() {
 
 // mover a peça
 // verificar colisoes
-// verificar status bar

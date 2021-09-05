@@ -1,8 +1,9 @@
 import pt.isel.canvas.*
 
-fun drawStatus(cv:Canvas) {
-    cv.drawRect(0,cv.height-STATUS_BAR,cv.width,STATUS_BAR, WHITE)
-    cv.drawText(CIRCLE_SIDE,cv.height-TEXT_BASE,"", GREEN)
+fun Connect4.drawStatus(cv:Canvas) {
+    cv.drawRect(0,cv.height-STATUS_BAR,cv.width,STATUS_BAR, 0x7777777)
+    cv.drawText(cv.width/2-RADIUS,cv.height-TEXT_BASE,"${this.score.first} -", RED)
+    cv.drawText(cv.width/2+18,cv.height-TEXT_BASE,"${this.score.second}", YELLOW)
 }
 
 fun drawSpaces(cv : Canvas) {
