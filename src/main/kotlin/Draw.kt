@@ -5,8 +5,12 @@ fun drawStatus(cv:Canvas) {
     cv.drawText(CIRCLE_SIDE,cv.height-TEXT_BASE,"", GREEN)
 }
 
-fun drawDisc(cv : Canvas) {
+fun drawSpaces(cv : Canvas) {
     ALL_POSITIONS.map { cv.drawCircle(it.row * CIRCLE_SIDE + RADIUS, it.column * CIRCLE_SIDE + RADIUS, RADIUS, WHITE) }
+}
+
+fun Canvas.drawDisc (disc:Disc) {
+    drawCircle(disc.pos.row * CIRCLE_SIDE + RADIUS ,disc.pos.column * CIRCLE_SIDE + RADIUS, RADIUS ,if (disc.player==Player.RED) RED else YELLOW )
 }
 
     fun drawGrid(cv: Canvas) {
