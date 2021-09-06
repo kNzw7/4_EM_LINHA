@@ -6,14 +6,22 @@ fun Connect4.drawStatus(cv: Canvas) {
     cv.drawText(cv.width / 2 + 18, cv.height - TEXT_BASE, "${this.score.second}", YELLOW)
 }
 
+//
 fun drawSpaces(cv: Canvas) {
-    ALL_POSITIONS.map { cv.drawCircle(it.row * CIRCLE_SIDE + RADIUS, it.column * CIRCLE_SIDE + RADIUS, RADIUS, WHITE) }
+    ALL_POSITIONS.map {
+        cv.drawCircle(
+            it.row * CIRCLE_SIDE + CENTER + RADIUS,
+            it.column * CIRCLE_SIDE + CENTER + RADIUS,
+            RADIUS,
+            WHITE
+        )
+    }
 }
 
 fun Canvas.drawDisc(disc: Disc) {
     drawCircle(
-        disc.pos.row * CIRCLE_SIDE + RADIUS,
-        disc.pos.column * CIRCLE_SIDE + RADIUS,
+        disc.pos.row * CIRCLE_SIDE + CENTER + RADIUS,
+        disc.pos.column * CIRCLE_SIDE + CENTER + RADIUS,
         RADIUS,
         if (disc.player == Player.RED) RED else YELLOW
     )

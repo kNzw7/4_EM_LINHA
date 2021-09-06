@@ -5,7 +5,8 @@ const val GRID_HEIGHT = 7
 const val STATUS_BAR = 40
 const val CIRCLE_SIDE = 74
 const val TEXT_BASE = 10
-const val RADIUS = 37
+const val RADIUS = 33
+const val CENTER = 4
 
 data class Connect4(val fixed: List<Disc>, val falling: Disc, val score: Pair<Int, Int>)
 data class Disc(val player: Player, val pos: Position, val dir: Direction)
