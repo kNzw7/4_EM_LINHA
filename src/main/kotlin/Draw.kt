@@ -6,7 +6,18 @@ fun Connect4.drawStatus(cv: Canvas) {
     cv.drawText(cv.width / 2 + 18, cv.height - TEXT_BASE, "${this.score.second}", YELLOW)
 }
 
-//
+fun Canvas.drawArena(connect4: Connect4) {
+    erase()
+    drawRect(0, 1 * CIRCLE_SIDE, GRID_WIDTH * CIRCLE_SIDE, (GRID_HEIGHT - 1) * CIRCLE_SIDE, BLUE)
+    drawGrid(this)
+    drawSpaces(this)
+    drawDisc(connect4.falling)
+    connect4.drawStatus(this)
+
+
+}
+
+
 fun drawSpaces(cv: Canvas) {
     ALL_POSITIONS.map {
         cv.drawCircle(
@@ -32,13 +43,13 @@ fun drawGrid(cv: Canvas) {
     (CIRCLE_SIDE..cv.width step CIRCLE_SIDE).forEach { cv.drawLine(it, CIRCLE_SIDE, it, cv.height, BLUE, 1) }
 }
 
-fun Canvas.drawArena() {
-    drawRect(0, CIRCLE_SIDE, width, height - STATUS_BAR, BLUE)
-
-    (0..width step CIRCLE_SIDE).forEach {
-        drawCircle(CIRCLE_SIDE / 2 + CIRCLE_SIDE * (it), CIRCLE_SIDE + CIRCLE_SIDE / 2, CIRCLE_SIDE / 2, WHITE)
-    }
-
-
-}
-
+//fun Canvas.drawArena() {
+//    drawRect(0, CIRCLE_SIDE, width, height - STATUS_BAR, BLUE)
+//
+//    (0..width step CIRCLE_SIDE).forEach {
+//        drawCircle(CIRCLE_SIDE / 2 + CIRCLE_SIDE * (it), CIRCLE_SIDE + CIRCLE_SIDE / 2, CIRCLE_SIDE / 2, WHITE)
+//    }
+//
+//
+//}
+//
